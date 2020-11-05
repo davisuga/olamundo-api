@@ -5,7 +5,7 @@
     "license": "MIT",
     "scripts": {
         "dev": "nodemon src/index.ts",
-        "start": "sucrase-node src/index.ts"
+        "start": "prisma generate; sucrase-node src/index.ts"
     },
     "devDependencies": {
         "@prisma/cli": "^2.10.2",
