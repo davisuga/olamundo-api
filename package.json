@@ -19,5 +19,8 @@
         "express": "^4.17.1",
         "sucrase": "^3.16.0",
         "@prisma/cli": "^2.10.2"
+    },
+    "engines": {
+        "node": "^14.0.0"
     }
 }
