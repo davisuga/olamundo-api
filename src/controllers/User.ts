@@ -1,13 +1,16 @@
-import { Router } from "express";
+import { Request, Response, Router } from "express";
 import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-const find_all = async (req: any, res: any) => {
-    const result = await prisma.user.findMany();
+const find_all = async (req: Request, res: Response) => {
+    const { email } = req.query;
+    const result = await prisma.user.findMany({
+        where: { email: email },
+    });
     res.json(result);
 };
-const find_one = async (req: any, res: any) => {
+const find_one = async (req: Request, res: Response) => {
     try {
         const result = await prisma.user.findOne({
             where: { id: parseInt(req.params.id) },
@@ -18,7 +21,7 @@ const find_one = async (req: any, res: any) => {
         res.json({ error });
     }
 };
-const create_one = async (req: any, res: any) => {
+const create_one = async (req: Request, res: Response) => {
     try {
         const result = await prisma.user.create({
             data: req.body,
@@ -29,7 +32,7 @@ const create_one = async (req: any, res: any) => {
         res.json({ error });
     }
 };
-const delete_one = async (req: any, res: any) => {
+const delete_one = async (req: Request, res: Response) => {
     try {
         const result = await prisma.user.delete({
             where: { id: parseInt(req.params.id) },
@@ -40,7 +43,7 @@ const delete_one = async (req: any, res: any) => {
         res.json({ error });
     }
 };
-const update_one = async (req: any, res: any) => {
+const update_one = async (req: Request, res: Response) => {
     try {
         const result = await prisma.user.update({
             where: { id: parseInt(req.params.id) },

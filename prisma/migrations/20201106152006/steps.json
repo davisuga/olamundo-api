@@ -1,0 +1,132 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateModel",
+      "model": "Progress"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Progress",
+      "field": "start_id",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Progress",
+          "field": "start_id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Progress",
+          "field": "start_id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Progress",
+          "field": "start_id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "now()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Progress",
+      "field": "user",
+      "type": "User",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Progress",
+          "field": "user"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Progress",
+          "field": "user"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[user_id]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "Progress",
+          "field": "user"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Progress",
+      "field": "final_grade",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Progress",
+      "field": "end_datetime",
+      "type": "DateTime",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Progress",
+      "field": "user_id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "User",
+      "field": "name",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "Exercise",
+      "field": "grade",
+      "type": "Int",
+      "arity": "Required"
+    }
+  ]
+}

@@ -12,9 +12,10 @@ generator client {
 model User {
   id       Int     @id @default(autoincrement())
   email    String  @unique
-  name     String?
+  name     String
   password String
-  progress Int     @default(0)
+  progress    Progress    // relation scalar field (used in the `@relation` attribute above)
+
 }
 
 model Lesson {
@@ -30,4 +31,14 @@ model Exercise {
   description String
   url         String
   answer      String
+  grade       Int
+}
+
+model Progress {
+  id      Int     @id @default(autoincrement())
+  user    User? @relation(fields: [user_id], references:[id])
+  user_id Int?
+  start_id DateTime  @default(now())
+  final_grade Int?
+  end_datetime DateTime?
 }

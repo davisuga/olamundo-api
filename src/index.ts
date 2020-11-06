@@ -1,7 +1,7 @@
 import express from "express";
 import routes from "./routes";
 
-const PORT: number = 3000;
+const PORT: number = 8080;
 
 const app: express.Application = express();
 

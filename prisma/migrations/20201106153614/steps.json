@@ -1,0 +1,28 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "UpdateField",
+      "model": "Progress",
+      "field": "final_grade",
+      "arity": "Optional"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Progress",
+      "field": "end_datetime",
+      "arity": "Optional"
+    },
+    {
+      "tag": "DeleteDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "Progress",
+          "field": "end_datetime"
+        },
+        "directive": "default"
+      }
+    }
+  ]
+}

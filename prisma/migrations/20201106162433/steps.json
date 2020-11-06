@@ -1,0 +1,17 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "UpdateField",
+      "model": "Progress",
+      "field": "user",
+      "arity": "Optional"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "Progress",
+      "field": "user_id",
+      "arity": "Optional"
+    }
+  ]
+}

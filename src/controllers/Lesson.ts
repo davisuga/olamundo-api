@@ -22,6 +22,7 @@ const create_one = async (req: any, res: any) => {
     try {
         const result = await prisma.lesson.create({
             data: req.body,
+            
         });
         res.json(result);
     } catch (error) {
